@@ -1,24 +1,128 @@
-=== Twenty Twenty-Five ===
-Contributors: wordpressdotorg
-Requires at least: 6.7
+=== Twenty Twenty ===
+Contributors: the WordPress team
+Requires at least: 4.7
 Tested up to: 6.7
-Requires PHP: 7.2
-Stable tag: 1.0
+Requires PHP: 5.2.4
+Stable tag: 2.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Default theme for 2020.
+
 == Description ==
 
-Twenty Twenty-Five emphasizes simplicity and adaptability. It offers flexible design options, supported by a variety of patterns for different page types, such as services and landing pages, making it ideal for building personal blogs, professional portfolios, online magazines, or business websites. Its templates cater to various blog styles, from text-focused to image-heavy layouts. Additionally, it supports international typography and diverse color palettes, ensuring accessibility and customization for users worldwide.
-
+Our default theme for 2020 is designed to take full advantage of the
+flexibility of the block editor. Organizations and businesses have the
+ability to create dynamic landing pages with endless layouts using the
+group and column blocks. The centered content column and fine-tuned
+typography also makes it perfect for traditional blogs. Complete editor
+styles give you a good idea of what your content will look like, even
+before you publish. You can give your site a personal touch by changing
+the background colors and the accent color in the Customizer. The colors of
+all elements on your site are automatically calculated based on the colors
+you pick, ensuring a high, accessible color contrast for your visitors.
 
 == Changelog ==
 
+= 2.8 =
+* Released: November 12, 2024
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_2.8
+
+= 2.7 =
+* Released: July 16, 2024
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_2.7
+
+= 2.6 =
+* Released: April 2, 2024
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_2.6
+
+= 2.5 =
+* Released: January 16, 2024
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_2.5
+
+= 2.4 =
+* Released: November 7, 2023
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_2.4
+
+= 2.3 =
+* Released: August 8, 2023
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_2.3
+
+= 2.2 =
+* Released: March 28, 2023
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_2.2
+
+= 2.1 =
+* Released: November 1, 2022
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_2.1
+
+= 2.0 =
+* Released: May 24, 2022
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_2.0
+
+= 1.9 =
+* Released: January 25, 2022
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_1.9
+
+= 1.8 =
+* Released: July 20, 2021
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_1.8
+
+= 1.7 =
+* Released: March 9, 2021
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_1.7
+
+= 1.6 =
+* Released: December 8, 2020
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_1.6
+
+= 1.5 =
+* Released: August 11, 2020
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_1.5
+
+= 1.4 =
+* Released: June 10, 2020
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_1.4
+
+= 1.3 =
+* Released: May 14, 2020
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_1.3
+
+= 1.2 =
+* Released: March 31, 2020
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_1.2
+
+= 1.1 =
+* Released: December 12, 2019
+
+https://wordpress.org/documentation/article/twenty-twenty-changelog/#Version_1.1
+
+= 1.0 =
+* Released: November 12, 2019
+
+Initial release
 
 == Copyright ==
 
-Twenty Twenty-Five WordPress Theme, (C) 2024 WordPress.org and contributors.
-Twenty Twenty-Five is distributed under the terms of the GNU GPL.
+Twenty Twenty WordPress Theme, Copyright 2019-2024 WordPress.org and contributors.
+Twenty Twenty is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -30,224 +134,57 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-This theme incorporates code from:
+Twenty Twenty is derived from the Chaplin Theme, Copyright 2019 Anders Norén
+Chaplin Theme is distributed under the terms of the GNU GPL version 2.0
 
-Twenty Twenty-Four WordPress Theme, (C) 2023 WordPress.org
-License: GPLv2 or later. License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Twenty Twenty bundles the following third-party resources:
 
+Illustrations by Tammie Lister
+License: Creative Commons Zero (CC0), https://creativecommons.org/publicdomain/zero/1.0/
 
-This theme bundles the following third-party resources:
-
-=== Fonts ===
-.ttf files downloaded from fonts.google.com have been converted to .woff2 using
-https://github.com/google/woff2
-
-
-Fira Code Font
-Copyright (c) 2014, The Fira Code Project Authors
+Inter Font
+Copyright (c) 2016-2019 The Inter Project Authors (me@rsms.me)
 License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
-Reference: https://github.com/tonsky/FiraCode
-Source: https://fonts.google.com/specimen/Fira+Code
+Source: https://rsms.me/inter/
 
-Manrope Font
-Copyright (c) 2018 The Manrope Project Authors
-License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
-Reference: https://github.com/sharanda/manrope
-Source: https://fonts.google.com/specimen/Manrope
+Bespoke Icons Created For Twenty Twenty
+License: Creative Commons Zero (CC0), https://creativecommons.org/publicdomain/zero/1.0/
+List of bespoke icons:
+- Search icon
+- Menu icon
 
-Vollkorn Font
-Copyright (c) 2005–2018, Friedrich Althausen
-License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
-Reference: https://github.com/FAlthausen/Vollkorn-Typeface
-Source: https://fonts.google.com/specimen/Vollkorn
+Feather Icons
+Copyright (c) 2013-2017 Cole Bemis
+License: MIT License, https://opensource.org/licenses/MIT
+Source: https://feathericons.com
+Used for post meta icons, and the link icon in the social menu.
 
-Fira Sans Font
-Digitized data copyright (c) 2012-2015, The Mozilla Foundation and Telefonica S.A.
-License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
-Reference: https://github.com/mozilla/Fira
-Source: https://fonts.google.com/specimen/Fira+Sans
+TikTok Icon
+License: GPLv2
+Source: Émilie Lebrun - @Emlebrun
+Used for TikTok social icon.
 
-Platypi Font
-License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
-Reference: https://github.com/d-sargent/platypi
-Source: https://fonts.google.com/specimen/Platypi
+Social Icons
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Source: WordPress Social Link Block (See wp-includes\blocks\social-link.php)
 
-Ysabeau Office Font
-License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
-Reference: https://github.com/CatharsisFonts/Ysabeau
-Source: https://fonts.google.com/specimen/Ysabeau+Office
+Code from Twenty Nineteen
+Copyright (c) 2018-2024 WordPress.org
+License: GPLv2
+Source: https://wordpress.org/themes/twentynineteen/
+Included as part of the following classes and functions:
+- TwentyTwenty_SVG_Icons
+- twentytwenty_the_theme_svg()
+- twentytwenty_get_theme_svg()
+- twentytwenty_nav_menu_social_icons()
 
-Literata Font
-License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
-Reference: https://github.com/googlefonts/literata
-Source: https://fonts.google.com/specimen/Literata
+Code from Twenty Seventeen
+Copyright (c) 2016-2024 WordPress.org
+License: GPLv2
+Source: https://wordpress.org/themes/twentyseventeen/
+Included as part of the following classes and functions:
+- twentytwenty_unique_id()
 
-Roboto Slab Font
-License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
-Reference: hhttps://github.com/googlefonts/robotoslab
-Source: https://fonts.google.com/specimen/Roboto+Slab
-
-Beiruti Font
-License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
-Reference: https://github.com/googlefonts/beiruti
-Source: https://fonts.google.com/specimen/Beiruti
-
-=== Images ===
-
-Northern Buttercups.
-Free public domain CC0 image.
-northern-buttercups-flowers.webp
-https://www.rawpixel.com/image/8802603
-
-License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
-Small totara tree on ridge above Long Point, Porirua Harbour, by Leslie Adkin.
-Free public domain CC0 image.
-404-image.webp
-https://www.rawpixel.com/image/13029755
-
-Old gray paris map.
-Free public domain CC0 image.
-location.webp
-https://www.rawpixel.com/image/6033837
-
-Delphinium (Larkspur).
-Free public domain CC0 image.
-delphinium-flowers.webp
-https://www.rawpixel.com/image/2224378
-
-Campanula Alliariifolia (Cornish Bellflower).
-Free public domain CC0 image.
-campanula-alliariifolia-flower.webp
-https://www.rawpixel.com/image/2222755
-
-Centaurea Ruthenica(Star Thristle).
-Free public domain CC0 image.
-star-thristle-flower.webp
-https://www.rawpixel.com/image/2211732
-
-Botany flowers.
-Free public domain CC0 image.
-botany-flowers.webp
-botany-flowers-closeup.webp
-https://www.rawpixel.com/image/8812207
-
-Person typing on a typewriter.
-Free public domain CC0 image.
-typewriter.webp
-https://www.rawpixel.com/image/12240004/photo-image-face-person-technology
-
-Woman wearing a traditional nurse's cap, photographed from behind.
-nurse.webp
-Free public domain CC0 image.
-https://www.rawpixel.com/image/8782633/photo-image-person-white
-
-Woman splashing water, at Lake George.
-woman-splashing-water.webp
-Free public domain CC0 image.
-https://www.rawpixel.com/image/9758986/photo-image-people-art-vintage
-
-Man in hat, standing in front of a building.
-man-in-hat.webp
-Free public domain CC0 image.
-https://www.slam.org/collection/objects/62642/
-
-African Woman by Pascal Sébah and Jean Pascal Sébah
-Free public domain CC0 image.
-agenda-img-4.webp
-https://www.rawpixel.com/image/14263497
-
-Two Girls, Mill Workers by Lewis W Hine.
-Free public domain CC0 image.
-link-in-bio-background.webp
-https://www.rawpixel.com/image/14265869
-
-Cliff Palace, Mesa Verde National Park, Colorado (vertical orientation)
-Free public domain CC0 image.
-poster-image-background.webp
-ruins-image.webp
-https://www.rawpixel.com/image/8802835
-
-Flower meadow in Llano, Texas.
-Free public domain CC0 image.
-coming-soon-bg-image.webp
-flower-meadow-square.webp
-services-subscriber-photo.webp
-https://www.rawpixel.com/image/8800058
-
-Hibiscus flower.
-Free public domain CC0 image.
-grid-flower-1.webp
-red-hibiscus-closeup.webp
-https://www.rawpixel.com/image/8799471
-
-Phacelia tanacetifolia (Lacy Phacelia) enlarged 4 times from Urformen der Kunst (1928) by Karl Blossfeldt.
-Free public domain CC0 image.
-grid-flower-2.webp
-https://www.rawpixel.com/image/2222743
-
-At Hawaiian Greenhouse, Inc, near Pahoa, anthuriums grow under a sun screen.
-Free public domain CC0 image.
-category-anthuriums.webp
-https://www.rawpixel.com/image/8799473
-
-Sunflower
-Free public domain CC0 image.
-category-sunflowers.webp
-https://www.rawpixel.com/image/8799614
-
-Detail of cactus "Saguaros, Saguro National Monument," Arizona. Photographer: Adams, Ansel, 1902-1984
-Free public domain CC0 image.
-category-cactus.webp
-https://www.rawpixel.com/image/8799351
-
-Vash Gon - Jicarilla by Edward S Curtis.
-Free public domain CC0 image.
-vash-gon-square.webp
-https://www.rawpixel.com/image/14262822
-
-One of the 40 Or More Species of Coral at John Pennekamp Coral Reef State Park, a Few Miles Off Key Largo.
-Free public domain CC0 image.
-coral-square.webp
-https://www.rawpixel.com/image/8799931
-
-Parthenon op de Akropolis in Athene (westzijde) (c. 1880 - c. 1890) by Rhomaides Frères.
-Free public domain CC0 image.
-parthenon-square.webp
-https://www.rawpixel.com/image/13759051
-
-Near East Dallas Creek, 05/1972. Photographer: Norton, Boyd.
-Free public domain CC0 image.
-dallas-creek-square.webp
-https://www.rawpixel.com/image/8802688
-
-Marshland birds at the Lake Havasu National Wildlife Refuge.
-Free public domain CC0 image.
-marshland-birds-square.webp
-https://www.rawpixel.com/image/8799403
-
-Photograph - New York [Portrait - Washington Square] by Paul Strand.
-Free public domain CC0 image.
-hero-podcast.webp
-https://www.rawpixel.com/image/14264288
-
-Evening Breeze by Asahachi Kono.
-Free public domain CC0 image.
-link-in-bio-image
-https://www.rawpixel.com/image/14262995
-
-Bust by Mathew brady.
-Free public domain CC0 image.
-book-image-landing.webp
-book-image.webp
-https://www.rawpixel.com/image/8799536
-Book template by Beatriz Fialho, public domain.
-
-Flora of Akaka Falls State Park.
-Free public domain CC0 image.
-akaka-falls-state-park-flora.webp
-https://www.rawpixel.com/image/8802845
-
-Closeup of plantlife in the Malibu Canyon area of the Santa Monica Mountains.
-Free public domain CC0 image.
-malibu-plantlife.webp
-https://www.rawpixel.com/image/8799918
+Underscores
+https://underscores.me/, (C) 2012-2024 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)

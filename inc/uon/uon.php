@@ -10,6 +10,68 @@ class Uon {
         self::$url = self::$main_url . self::$key . '/';
     }
 
+    static function getUserByUonId($uon_id) {
+        if ( !$uon_id ) return false;
+
+        $args = array(
+            'meta_query' => [
+                [
+                    'key' => 'uon_id',
+                    'value' => $uon_id,
+                ],
+            ],
+        );
+        $users = get_users($args);
+
+        if ( $users ) {
+            return $users[0];
+        }
+        return false;
+    }
+
+    static function getPostByUonId($post_type, $uon_id) {
+        if ( !$uon_id || !$post_type ) return false;
+
+        $args = [
+            'post_type'   => $post_type,
+            'post_status' => ['publish', 'future'],
+            'suppress_filters' => true,
+            'meta_query' => [
+                [
+                    'key'   => 'uon_id',
+                    'value' => $uon_id,
+                ],
+            ]
+        ];
+        $posts = get_posts($args);
+
+        if ( $posts ) {
+            return $posts[0];
+        }
+        return false;
+    }
+
+    static function getTermByUonId($taxonomy, $uon_id) {
+        if ( !$uon_id || !$taxonomy ) return false;
+
+        $term_args = [
+            'taxonomy'   => $taxonomy,
+            'hide_empty' => false,
+            'meta_query' => [
+                [
+                    'key'   => 'uon_id',
+                    'value' => $uon_id,
+                ],
+            ]
+        ];
+        $terms = get_terms($term_args);
+
+        if (!is_wp_error($terms) && is_array($terms) && count($terms)) {
+            return $terms[0];
+        }
+
+        return false;
+    }
     static function uonUserByEmail($email) {
         $url = self::$url . 'user/email.json';
         $data = array(
@@ -131,6 +193,8 @@ class Uon {
         }
 
     }
+
+
 
 }
 Uon::init();
