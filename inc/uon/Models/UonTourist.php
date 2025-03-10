@@ -4,14 +4,30 @@ class UonTourist extends UonCustomPost
 {
     public $post_type = 'uon_tourists';
     public $user_id;
+    public $name;
 
     public function __construct($post, $args = [])
     {
         $this->user_id = $args['user_id'];
         parent::__construct($post, $args);
+        $this->name = $this->getName();
 
     }
 
+    public function getName() {
+        $names = [];
+        if ($this->__get('surname')) {
+            $names[] = $this->__get('surname');
+        }
+        if ($this->__get('name')) {
+            $names[] = $this->__get('name');
+        }
+        if ($this->__get('sname')) {
+            $names[] = $this->__get('sname');
+        }
+
+        return implode(' ', $names);
+    }
     public function loadData($update = false) {
         if ($data = $this->getData()) {
 

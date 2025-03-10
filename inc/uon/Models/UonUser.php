@@ -3,17 +3,23 @@
 class UonUser
 {
 
-    public $ID, $user, $uon_id;
+    public $ID, $user, $uon_id, $orders, $tourists, $name;
 
-    public function __construct($user, $uon = false)
+    public function __construct($user, $args = [])
     {
-        if ($uon) {
-            $this->uon_id = $user;
+        $default_args = [
+            'uon_id' => false,
+            'update' => false,
+            'all' => false,
+        ];
+        $args = array_merge($default_args, $args);
+        if (! $user && $args['uon_id']) {
+            $this->uon_id = $args['uon_id'];
             $this->user = UOn::getUserByUonId($this->uon_id);
             if (isset($this->user->ID)) {
                 $this->ID = absint($this->user->ID);
             } else {
-                $this->ID = $this->loadUser();
+                $this->ID = $this->loadData();
                 $this->user = get_user($this->ID);
             }
         } else {
@@ -22,10 +28,65 @@ class UonUser
                 $this->user = $user;
             else :
                 $this->ID = absint($user);
-                $this->user = get_post($this->ID);
+                $this->user = get_user($this->ID);
             endif;
             $this->uon_id = get_user_meta($this->ID, 'uon_id', true);
+            if ($args['update']) {
+                $this->loadData(true);
+                $this->loadOrders(true);
+            }
         }
+        if ($args['all']) {
+            $this->tourists = $this->getTourists($args['update']);
+            $this->orders = $this->getOrders($args['update']);
+        }
+        $this->name = $this->getName();
+
+    }
+
+    public function getTourists($update = false) {
+        $args = [
+            'post_type'   => 'uon_tourists',
+            'post_author' => $this->ID,
+            'post_status' => ['publish', 'future'],
+        ];
+        $posts_query = new WP_Query;
+        $posts = $posts_query->query( $args );
+        $tourists = [];
+        foreach ($posts as $post) {
+            $tourists[] = new UonTourist($post, ['user_id' => $this->ID, 'update' => $update]);
+        }
+        return $tourists;
+    }
+
+    public function getOrders($update = false) {
+        $args = [
+            'post_type'   => 'uon_orders',
+            'post_author' => $this->ID,
+            'post_status' => ['publish', 'future'],
+        ];
+        $posts_query = new WP_Query;
+        $posts = $posts_query->query( $args );
+        $orders = [];
+        foreach ($posts as $post) {
+            $orders[] = new UonOrder($post, ['all' => true, 'update' => $update]);
+        }
+        return $orders;
+    }
+
+    public function getName() {
+        $names = [];
+        if ($this->user->first_name) {
+            $names[] = $this->user->first_name;
+        }
+        if ($this->__get('sname')) {
+            $names[] = $this->__get('sname');
+        }
+        if ($this->user->last_name) {
+            $names[] = $this->user->last_name;
+        }
+
+        return implode(' ', $names);
     }
 
     public function __get( $key ) {
@@ -38,7 +99,7 @@ class UonUser
         return $value;
     }
 
-    public function loadUser($update = false) {
+    public function loadData($update = false) {
         if ($data = $this->getData()) {
             $args = [
                 'user_login'   => $data->u_email,
@@ -59,6 +120,8 @@ class UonUser
             ];
             if ($update && $this->ID) {
                 $args['ID'] = $this->ID;
+                unset($args['user_login']);
+                return wp_update_user($args);
             }
             return wp_insert_user( $args );
         }
@@ -74,7 +137,7 @@ class UonUser
         return false;
     }
 
-    public function loadOrders($update = false) {
+    public function loadOrders($update = false, $all = false) {
         $url = UOn::$url . 'request/search.json';
         $data = array(
             'client_ids' => $this->uon_id
@@ -84,7 +147,7 @@ class UonUser
         $orders = [];
         if (isset($data->requests)) {
             foreach ($data->requests as $request) {
-                $orders[] = new UonOrder(false, ['uon_id' => $request->id, 'update' => $update]);
+                $orders[] = new UonOrder(false, ['uon_id' => $request->id, 'update' => $update, 'all' => $all]);
             };
         }
         return $orders;

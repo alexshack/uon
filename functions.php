@@ -203,6 +203,7 @@ function twentytwenty_register_styles() {
 
 	// Enqueue the CSS file for the variable font, Inter.
 	wp_enqueue_style( 'twentytwenty-fonts', get_theme_file_uri( '/assets/css/font-inter.css' ), array(), $theme_version, 'all' );
+    wp_enqueue_style( 'bootstarp', get_theme_file_uri( '/assets/css/bootstrap.min.css' ), array(), $theme_version, 'all' );
 
 	// Add output of Customizer settings as inline style.
 	$customizer_css = twentytwenty_get_customizer_css( 'front-end' );
@@ -235,6 +236,7 @@ function twentytwenty_register_scripts() {
 	 * will execute sooner once the DOM has loaded. The $args array is not used here to avoid unintentional footer
 	 * placement in WP<6.3; the wp_script_add_data() call is used instead.
 	 */
+    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.bundle.js', array(), $theme_version );
 	wp_enqueue_script( 'twentytwenty-js', get_template_directory_uri() . '/assets/js/index.js', array(), $theme_version );
 	wp_script_add_data( 'twentytwenty-js', 'strategy', 'defer' );
 }

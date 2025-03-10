@@ -16,6 +16,7 @@ abstract class UonCustomPost {
         $default_args = [
             'uon_id' => false,
             'update' => false,
+            'all' => false,
         ];
         $args = array_merge($default_args, $args);
         if (! $post && $args['uon_id']) {

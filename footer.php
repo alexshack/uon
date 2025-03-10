@@ -29,7 +29,7 @@
 							}
 							?>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-						</p><!-- .footer-copyright -->
+						</p>
 
 						<?php
 						if ( function_exists( 'the_privacy_policy_link' ) ) {
@@ -37,11 +37,7 @@
 						}
 						?>
 
-						<p class="powered-by-wordpress">
-							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentytwenty' ) ); ?>">
-								<?php _e( 'Powered by WordPress', 'twentytwenty' ); ?>
-							</a>
-						</p><!-- .powered-by-wordpress -->
+
 
 					</div><!-- .footer-credits -->
 

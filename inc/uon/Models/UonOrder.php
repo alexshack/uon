@@ -3,15 +3,45 @@
 class UonOrder extends UonCustomPost
 {
     public $post_type = 'uon_orders';
+    public $tourists;
+
+    public $program = null;
 
     public function __construct($post, $args = [])
     {
         parent::__construct($post, $args);
+        if ($args['all']) {
+            $this->tourists = $this->getTourists();
+            $terms = wp_get_post_terms($this->ID, 'uon_programs', []);
+            if (count($terms)) {
+                $this->program = new UonProgram($terms[0]->term_id);
+            }
+        }
+    }
+
+    public function getTourists() {
+        $tourists_ids = get_post_meta($this->ID, 'tourists_ids', true);
+        $args = [
+            'post_type'   => 'uon_tourists',
+            'post_status' => ['publish', 'future'],
+            'suppress_filters' => true,
+            'include' => $tourists_ids,
+        ];
+        $posts = get_posts($args);
+        $tourists = [];
+        foreach ($posts as $post) {
+            $tourists[] = new UonTourist($post, ['user_id' => $this->post->post_author]);
+        }
+        return $tourists;
+    }
+
+    public function getProgram() {
+
     }
 
     public function loadData($update = false) {
         if ($data = $this->getData()) {
-            $user = new UonUser($data->client_id, true);
+            $user = new UonUser(false, ['uon_id' => $data->client_id]);
             $service = false;
             $program = false;
             if (is_array($data->services)) {
@@ -30,7 +60,6 @@ class UonOrder extends UonCustomPost
                 'post_title'  => $data->client_surname.' '.$data->client_name.' - '.wp_date('d.m.y', strtotime($data->dat_request)),
                 'post_date'   => $data->dat_request,
                 'post_author' => $user->ID,
-                'post_content' => $service ? $service->description : '',
                 'meta_input' => [
                     'uon_id' => $this->uon_id,
                     'uon_travel_type' => $data->travel_type,
@@ -48,7 +77,11 @@ class UonOrder extends UonCustomPost
                 $args['post_category'] = [$program->ID];
             }
 
-            return wp_insert_post( $args );
+            $post_id = wp_insert_post( $args );
+            if ($program) {
+                wp_set_object_terms($post_id, (int)$program->ID, $program->taxonomy);
+            }
+            return $post_id;
         }
     }
 

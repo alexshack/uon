@@ -115,7 +115,7 @@ blockquote::after {
 
 
 html {
-	font-size: 62.5%; /* 1rem = 10px */
+	font-size: 60%; /* 1rem = 10px */
 	scroll-behavior: smooth;
 }
 
@@ -130,7 +130,7 @@ body {
 	box-sizing: border-box;
 	color: #000;
 	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 1.8rem;
+	font-size: 16px;
 	letter-spacing: -0.015em;
 	text-align: left;
 }
@@ -465,12 +465,31 @@ a:focus {
 	text-decoration: none;
 }
 
+.user-content {
+	min-height: calc(100vh - 300px);
+}
+.nav-link {
+	font-size: 1.8rem!important;
+}
+table {
+	border-color: transparent!important;
+}
+.col-form-label {
+	font-size: 1.8rem!important;
+}
+.form-control {
+	padding: 8px!important;
+	border-radius: 4px!important;
+}
+.btn {
+	font-size: 1.8rem!important;
+}
 
 /* Lists ------------------------------------- */
 
 ul,
 ol {
-	margin: 0 0 3rem 3rem;
+	/*margin: 0 0 3rem 3rem;*/
 }
 
 ul {

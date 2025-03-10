@@ -4,6 +4,7 @@ class UonProgram extends UonCustomTerm
 {
     public $taxonomy = 'uon_programs';
 
+
     public function __construct($post, $args = [])
     {
         parent::__construct($post, $args);
@@ -19,7 +20,6 @@ class UonProgram extends UonCustomTerm
             } else {
                 $term = wp_insert_term( $term_name, $this->taxonomy, [] );
                 if( is_wp_error( $term ) ){
-                    //print_r(get_term( 3 ));
                     echo $term_name;
                     echo $term->get_error_message();
                 }
@@ -28,9 +28,10 @@ class UonProgram extends UonCustomTerm
                 }
             }
             if($term_id) {
-                update_term_meta($term_id, 'uon_id', $this->id);
+                update_term_meta($term_id, 'uon_id', $this->uon_id);
                 update_term_meta($term_id, 'uon_date_begin', $this->date_begin);
                 update_term_meta($term_id, 'uon_date_end', $this->date_end);
+                update_term_meta($term_id, 'uon_description', $this->description);
             }
 
             return $term_id;

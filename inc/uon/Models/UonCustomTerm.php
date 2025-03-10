@@ -10,6 +10,7 @@ abstract class UonCustomTerm {
     public $uon_id;
 
     public $taxonomy;
+    public $name;
 
     public function __construct($term, $args = [])
     {
@@ -21,25 +22,26 @@ abstract class UonCustomTerm {
         if (! $term && $args['uon_id']) {
             $this->uon_id = $args['uon_id'];
             $this->term = UOn::getTermByUonId($this->taxonomy, $this->uon_id);
-            if (isset($this->term->ID)) {
-                $this->ID = absint($this->term->ID);
+            if (isset($this->term->term_id)) {
+                $this->ID = absint($this->term->term_id);
             } else {
                 $this->ID = $this->loadData();
                 $this->term = get_term($this->ID);
             }
         } else {
             if ( $term instanceof WP_Term || $term instanceof UonCustomTerm ) :
-                $this->ID = absint($term->ID);
+                $this->ID = absint($term->term_id);
                 $this->term = $term;
             else :
                 $this->ID = absint($term);
-                $this->term = get_post($this->ID);
+                $this->term = get_term($this->ID);
             endif;
             $this->uon_id = get_term_meta($this->ID, 'uon_id', true);
             if ($args['update']) {
                 $this->loadData(true);
             }
         }
+        $this->name = $this->term->name;
 
     }
 
